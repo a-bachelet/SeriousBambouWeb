@@ -1,0 +1,90 @@
+<mat-card>
+  <mat-table #userList [dataSource]="usersDataSource">
+
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="password">
+      <mat-header-cell *matHeaderCellDef> Password </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="validUntil">
+      <mat-header-cell *matHeaderCellDef> Valid Until </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.validUntil | date:'dd/MM/yyyy'}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="authToken">
+      <mat-header-cell *matHeaderCellDef> Auth Token </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.authToken}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="exp">
+      <mat-header-cell *matHeaderCellDef> Experience </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.exp}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="profilepic">
+      <mat-header-cell *matHeaderCellDef> Profile Pic </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.profilepic}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="usersLabels"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: usersLabels;"></mat-row>
+  
+  </mat-table>
+</mat-card>  
+
+<mat-card>
+  <mat-table #quizzList [dataSource]="quizzsDataSource">
+
+    <ng-container matColumnDef="label">
+      <mat-header-cell *matHeaderCellDef> Label </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="theme">
+      <mat-header-cell *matHeaderCellDef> Theme </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.theme}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="quizzsLabels"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: quizzsLabels;"></mat-row>
+  
+  </mat-table>
+</mat-card>
+
+<mat-card>
+  <mat-table #questionList [dataSource]="questionsDataSource">
+
+    <ng-container matColumnDef="label">
+      <mat-header-cell *matHeaderCellDef> Label </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="quizz">
+      <mat-header-cell *matHeaderCellDef> Quizz </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.quizz}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="questionsLabels"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: questionsLabels;"></mat-row>
+  
+  </mat-table>
+</mat-card>
+
+<mat-card>
+  <mat-table #questionList [dataSource]="themesDataSource">
+
+    <ng-container matColumnDef="label">
+      <mat-header-cell *matHeaderCellDef> Label </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.label}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="themesLabels"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: themesLabels;"></mat-row>
+  
+  </mat-table>
+</mat-card>

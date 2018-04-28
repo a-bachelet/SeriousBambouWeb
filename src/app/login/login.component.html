@@ -1,0 +1,13 @@
+<mat-card class="loginCard flex-container" fxLayout="column" fxLayoutAlign="start center">
+
+    <mat-form-field class="flex-item">
+      <input matInput type="text" matInput [(ngModel)]="username">
+    </mat-form-field>
+  
+    <mat-form-field class="flex-item">
+      <input matInput type="password" matInput [(ngModel)]="password">
+    </mat-form-field>
+  
+    <button mat-raised-button mat-color="primary" class="flex-item" (click)="login()">Login</button>
+
+</mat-card>    
